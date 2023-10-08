@@ -3180,23 +3180,39 @@
 # b=func(a)
 # print(b)
 
+cats = [('мартин', '6', 'Алесей', 'Егоров'),
+('мартин', '5', 'Алесей', 'Егоров'),
+('фродо', '3', 'Анна', 'андреевнагитрар'),
+('вася', '4', 'Олег', 'тинькоф'),
+('муся', '7', 'Алесей', 'Егоров')]
 
 
 
+# my_dict ={}
+# def biggest_dict(**kwargs):
+#     my_dict.update(**kwargs)
+# func(a=5, b=10,c= 10)
+# print(my_dict)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+import random
+class Voin:
+    def __init__(self,name, hp, damage):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+    def hit(self, voin):
+        voin.hp -= self.damage
+        print(f'"{voin.name}" атаковал "{voin.name}". У "{voin.name}" осталось {voin.hp} здоровья')
+Anton = Voin('Anton',100,random.randint(30,60))
+Victor = Voin(name='Victor',hp = 100,damage = random.randint(30,60))
+while Anton.hp > 0 and Victor.hp >0:
+    if random.randint(1,2) == 2:
+        Anton.hit(Victor)
+    else:
+        Victor.hit(Anton)
+    if Anton.hp < 0 or Victor.hp<0:
+        print('game over')
+        break
 
 
 
